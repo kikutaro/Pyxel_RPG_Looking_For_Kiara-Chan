@@ -171,7 +171,7 @@ class MainCharacter(Character):
 
     def マップアイキャッチ(self):
         pyxel.cls(const.色.RED.value)
-        pyxel.text((const.L_WIDTH - len(const.TITLE) * const.FONT_SIZE )/2, const.L_HEIGHT/2, const.TITLE, const.色.PINK.value, const.MESSAGE_FONT)
+        pyxel.text((const.L_WIDTH - len(const.TITLE) * const.FONT_SIZE )/2, const.L_HEIGHT/2, const.TITLE, const.色.PINK.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
 
     def 場所判定(self,x,y):
         # マップの場所を判定して、部屋の場所を返す
@@ -185,7 +185,7 @@ class MainCharacter(Character):
     def 場所表示(self,x,y):
          if self.状態 != const.状態.マップ切り替え:
              pyxel.rect(const.R_POS_x,const.R_POS_y,const.R_WIDTH,const.R_HEIGHT, const.色.ORANGE.value)
-             pyxel.text(const.R_POS_x + const.FONT_SIZE/2, const.R_POS_y + 2 ,self.場所判定(x,y), const.色.WHITE.value, const.MESSAGE_FONT)
+             pyxel.text(const.R_POS_x + const.FONT_SIZE/2, const.R_POS_y + 2 ,self.場所判定(x,y), const.色.WHITE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
 
     def getMusic(self):
         return self.music

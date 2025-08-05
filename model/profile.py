@@ -20,7 +20,7 @@ class Profile:
 
     def draw(self):
         pyxel.cls(0)
-        pyxel.text(10, 10, "メンバー紹介", 7, const.SUBTITLE_FONT)
+        pyxel.text(10, 10, "メンバー紹介", 7, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
         pyxel.rectb(10, 35, 80, 20, 7)
         pyxel.rectb(10, 65, 80, 80, 7)
         pyxel.rectb(100, 35, 146, 110, 7)

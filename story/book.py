@@ -217,11 +217,11 @@ class Book:
                 self.member.draw()
             case self.モードメンバ:
                 pyxel.cls(0)
-                pyxel.text(10, 10, "メンバー紹介", 7, const.SUBTITLE_FONT)
+                pyxel.text(10, 10, "メンバー紹介", 7, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
                 
                 #なまえ
                 pyxel.rectb(10, 20, 80, 20, const.色.WHITE.value)
-                pyxel.text(15, 25,  self.選択したメンバー, 7, const.MESSAGE_FONT)
+                pyxel.text(15, 25,  self.選択したメンバー, 7, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
 
                 #どっと
                 pyxel.rectb(100, 20, 65, 20, const.色.WHITE.value)
@@ -266,9 +266,9 @@ class Book:
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['左'][const.向き.北][1],
                         const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
 
-                pyxel.text(190, 25, "<<", const.色.RED.value if self.メニューIdx == 0 else const.色.WHITE.value, const.MESSAGE_FONT)
-                pyxel.text(205, 25, "戻る", const.色.RED.value if self.メニューIdx == 1 else const.色.WHITE.value, const.MESSAGE_FONT)
-                pyxel.text(230, 25, ">>", const.色.RED.value if self.メニューIdx == 2 else const.色.WHITE.value, const.MESSAGE_FONT)
+                pyxel.text(190, 25, "<<", const.色.RED.value if self.メニューIdx == 0 else const.色.WHITE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+                pyxel.text(205, 25, "戻る", const.色.RED.value if self.メニューIdx == 1 else const.色.WHITE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+                pyxel.text(230, 25, ">>", const.色.RED.value if self.メニューIdx == 2 else const.色.WHITE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
 
                 #ぷろふ
                 pyxel.rectb(10, 50, 236, 196, const.色.WHITE.value)
@@ -277,19 +277,19 @@ class Book:
                     if key == 'しゅみ':
                         for j, hobby in enumerate(value):
                             if j == 0:
-                                pyxel.text(15, 65 + cnt * 15, f"{key}: {hobby}", const.色.WHITE.value, const.MESSAGE_FONT)
+                                pyxel.text(15, 65 + cnt * 15, f"{key}: {hobby}", const.色.WHITE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
                             else:
-                                pyxel.text(15, 65 + cnt * 15, f"     : {hobby}", const.色.WHITE.value, const.MESSAGE_FONT)
+                                pyxel.text(15, 65 + cnt * 15, f"     : {hobby}", const.色.WHITE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
                             cnt += 1
                     elif key == 'とくぎ':
                         for j, skill in enumerate(value):
                             if j == 0:
-                                pyxel.text(15, 65 + cnt * 15, f"{key}: {skill}", const.色.WHITE.value, const.MESSAGE_FONT)
+                                pyxel.text(15, 65 + cnt * 15, f"{key}: {skill}", const.色.WHITE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
                             else:
-                                pyxel.text(15, 65 + cnt * 15, f"     : {skill}", const.色.WHITE.value, const.MESSAGE_FONT)
+                                pyxel.text(15, 65 + cnt * 15, f"     : {skill}", const.色.WHITE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
                             cnt += 1
                     else:
-                        pyxel.text(15, 65 + cnt * 15, f"{key}: {value}", const.色.WHITE.value, const.MESSAGE_FONT)
+                        pyxel.text(15, 65 + cnt * 15, f"{key}: {value}", const.色.WHITE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
                         cnt += 1
 
     def キャラ名コンバート(self, name):

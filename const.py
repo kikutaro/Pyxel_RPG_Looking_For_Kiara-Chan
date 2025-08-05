@@ -45,12 +45,8 @@ class OPENING_MODE(Enum):
     OPENING = auto()
     MENU = auto()
 整列先頭 = (35*TILE,39*TILE) 
-# 680 * CELL 490 * CELL
 #フォント系
-TITLE_FONT = pyxel.Font('assets/umplus_j12r.bdf')
 TITLE_FONT_SIZE = 12
-SUBTITLE_FONT = pyxel.Font('assets/misaki_gothic_2nd.bdf')
-MESSAGE_FONT = pyxel.Font('assets/misaki_gothic_2nd.bdf')
 FONT_SIZE = 8
 メニュー縦幅 = 12 #フォントは8で上下2のパディングがある
 

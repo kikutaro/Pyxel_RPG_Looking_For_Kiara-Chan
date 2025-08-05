@@ -53,14 +53,14 @@ class Message:
 
         #既に表示済の行メッセージは描画する
         for i in range(0, self.message_line):
-            pyxel.text(self.start_pos[0], self.start_pos[1] + i * const.M_STORY_BR, self.messages[i], const.色.WHITE.value,const.MESSAGE_FONT)
+            pyxel.text(self.start_pos[0], self.start_pos[1] + i * const.M_STORY_BR, self.messages[i], const.色.WHITE.value,pyxel.Font('assets/misaki_gothic_2nd.bdf'))
         #リアルタイムに表示中のメッセージは1文字ずつ描画する
-        pyxel.text(self.start_pos[0], self.start_pos[1] + self.message_line * const.M_STORY_BR, self.messages[self.message_line][0:self.message_idx], const.色.WHITE.value, const.MESSAGE_FONT)
+        pyxel.text(self.start_pos[0], self.start_pos[1] + self.message_line * const.M_STORY_BR, self.messages[self.message_line][0:self.message_idx], const.色.WHITE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
 
     def show_window(self):
         if self.messanger != None:
             pyxel.rect(const.M_WINDOW_IN_POS_X,const.M_WINDOW_IN_POS_Y - const.FONT_SIZE * 2, (len(self.messanger) + 1)  * const.FONT_SIZE, const.FONT_SIZE * 1.5, const.色.WHITE.value)
-            pyxel.text(const.M_WINDOW_IN_POS_X + const.M_WINDOW_IN_MARGIN, const.M_WINDOW_IN_POS_Y - const.FONT_SIZE * 2 + const.M_WINDOW_IN_MARGIN, self.messanger, const.色.BLACK.value, const.MESSAGE_FONT)
+            pyxel.text(const.M_WINDOW_IN_POS_X + const.M_WINDOW_IN_MARGIN, const.M_WINDOW_IN_POS_Y - const.FONT_SIZE * 2 + const.M_WINDOW_IN_MARGIN, self.messanger, const.色.BLACK.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
         pyxel.rectb(const.M_WINDOW_OUT_POS_X, const.M_WINDOW_OUT_POS_Y, const.M_WINDOW_OUT_WIDTH, const.M_WINDOW_OUT_HEIGHT, const.色.BLACK.value)
         pyxel.rect(const.M_WINDOW_OUT_POS_X + 1, const.M_WINDOW_OUT_POS_Y + 1, const.M_WINDOW_OUT_WIDTH - 2, const.M_WINDOW_OUT_HEIGHT - 2, const.色.WHITE.value)
         pyxel.rect(const.M_WINDOW_IN_POS_X, const.M_WINDOW_IN_POS_Y, const.M_WINDOW_IN_WIDTH, const.M_WINDOW_IN_HEIGHT, const.色.BLACK.value)

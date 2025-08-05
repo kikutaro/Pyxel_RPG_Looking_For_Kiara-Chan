@@ -239,9 +239,9 @@ class Play:
             mes1 = "さがしてくれて、ありがとう！"
             mes2 = "このスクリーンをキャプチャしてタイムをきそってね！"
             mes3 = "クリアタイム"
-            pyxel.text(self.X軸センタリング(mes1, const.FONT_SIZE), 60, mes1, const.色.BLACK.value, const.MESSAGE_FONT)
-            pyxel.text(self.X軸センタリング(mes2, const.FONT_SIZE), 80, mes2, const.色.BLACK.value, const.MESSAGE_FONT)
-            pyxel.text(self.X軸センタリング(mes3, const.FONT_SIZE), 100, mes3 , const.色.BLACK.value, const.MESSAGE_FONT)
+            pyxel.text(self.X軸センタリング(mes1, const.FONT_SIZE), 60, mes1, const.色.BLACK.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+            pyxel.text(self.X軸センタリング(mes2, const.FONT_SIZE), 80, mes2, const.色.BLACK.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+            pyxel.text(self.X軸センタリング(mes3, const.FONT_SIZE), 100, mes3 , const.色.BLACK.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
 
             #右
             if 0 < pyxel.frame_count % 10 and  pyxel.frame_count % 10 < 5:
@@ -257,7 +257,7 @@ class Play:
                     const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
 
             mes4 = self.timer.表示時間() + "秒"
-            pyxel.text(self.X軸センタリング(mes4, const.TITLE_FONT_SIZE), 145, mes4, const.色.BLACK.value, const.TITLE_FONT)
+            pyxel.text(self.X軸センタリング(mes4, const.TITLE_FONT_SIZE), 145, mes4, const.色.BLACK.value, pyxel.Font('assets/umplus_j12r.bdf'))
 
             if pyxel.btn(pyxel.KEY_RETURN):
                 pass

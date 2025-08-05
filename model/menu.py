@@ -32,8 +32,8 @@ class Menu:
 
         for idx, val in enumerate(self.menu):
             if idx == self.selected_index:
-                pyxel.text(メニュー開始位置X - const.FONT_SIZE, メニューの開始位置Y + idx *const.メニュー縦幅, ">", self.選択色, const.SUBTITLE_FONT)
-                pyxel.text(メニュー開始位置X, メニューの開始位置Y + idx * const.メニュー縦幅, val[0], self.選択色, const.SUBTITLE_FONT)
+                pyxel.text(メニュー開始位置X - const.FONT_SIZE, メニューの開始位置Y + idx *const.メニュー縦幅, ">", self.選択色, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+                pyxel.text(メニュー開始位置X, メニューの開始位置Y + idx * const.メニュー縦幅, val[0], self.選択色, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
             else:
-                pyxel.text(メニュー開始位置X, メニューの開始位置Y + idx * const.メニュー縦幅, " ", self.文字色, const.SUBTITLE_FONT)
-                pyxel.text(メニュー開始位置X, メニューの開始位置Y + idx * const.メニュー縦幅, val[0], self.文字色, const.SUBTITLE_FONT)
+                pyxel.text(メニュー開始位置X, メニューの開始位置Y + idx * const.メニュー縦幅, " ", self.文字色, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+                pyxel.text(メニュー開始位置X, メニューの開始位置Y + idx * const.メニュー縦幅, val[0], self.文字色, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
