@@ -1,0 +1,27 @@
+import pyxel
+import os
+import sys
+sys.path.append(os.getcwd())
+import const
+
+class 実行:
+    def __init__(self):
+        pyxel.init(256,256,"エンドロール")
+        pyxel.load('../../my_resource.pyxres')
+
+        self.h = const.FIELD
+
+        pyxel.run(self.update, self.draw)
+
+    def update(self):
+        if self.h > const.FIELD / 2 - 20:
+            self.h -= 1
+
+    def draw(self):
+        pyxel.cls(const.色.WHITE.value)
+        pyxel.text(40,self.h,"Created By イコまい", const.色.BLACK.value, const.MESSAGE_FONT)
+        pyxel.text(40,self.h + 10,"Please visit https://equal-maika.jp", const.色.BLACK.value, const.MESSAGE_FONT)
+        pyxel.blt(40,self.h+20,0,
+                        160,80,
+                        const.キャラサイズ,const.キャラサイズ, const.色.WHITE.value)
+実行()
