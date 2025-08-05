@@ -58,7 +58,7 @@ class MainCharacter(Character):
         self.local_x = self.global_x % const.FIELD
         self.local_y = self.global_y % const.FIELD
 
-        if pyxel.btnp(pyxel.KEY_LEFT,const.HOLD,const.REPEAT):
+        if pyxel.btnp(pyxel.KEY_LEFT,const.HOLD,const.REPEAT) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT,const.HOLD,const.REPEAT):
                 self.向き = const.向き.西
                 if self.前に進めるかな(self.global_x+4 - const.キャラ歩幅, self.global_y, self.global_x+4 - const.キャラ歩幅, self.global_y + const.キャラサイズ-1) and not self.メンバーとの接触チェック(self.local_x - const.キャラ歩幅, self.local_y):
                     self.global_x -= const.キャラ歩幅
@@ -69,7 +69,7 @@ class MainCharacter(Character):
                         self.状態 = const.状態.マップ切り替え
                         self.local_x = const.FIELD - const.キャラサイズ
                         self.global_x -= const.キャラサイズ
-        elif pyxel.btnp(pyxel.KEY_RIGHT,const.HOLD,const.REPEAT):
+        elif pyxel.btnp(pyxel.KEY_RIGHT,const.HOLD,const.REPEAT) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT,const.HOLD,const.REPEAT):
                 self.向き = const.向き.東
                 if self.前に進めるかな(self.global_x + const.キャラサイズ-6 + const.キャラ歩幅, self.global_y, self.global_x + const.キャラサイズ-6 + const.キャラ歩幅, self.global_y + const.キャラサイズ-1) and not self.メンバーとの接触チェック(self.local_x + const.キャラ歩幅, self.local_y):
                     # self.local_x += const.キャラ歩幅
@@ -81,7 +81,7 @@ class MainCharacter(Character):
                         self.状態 = const.状態.マップ切り替え
                         self.local_x = 0
                         self.global_x += const.キャラサイズ
-        elif pyxel.btnp(pyxel.KEY_UP,const.HOLD,const.REPEAT):
+        elif pyxel.btnp(pyxel.KEY_UP,const.HOLD,const.REPEAT) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_UP,const.HOLD,const.REPEAT):
                 self.向き = const.向き.北
                 if self.前に進めるかな(self.global_x+5, self.global_y - const.キャラ歩幅, self.global_x + const.キャラサイズ-5, self.global_y - const.キャラ歩幅) and not self.メンバーとの接触チェック(self.local_x, self.local_y - const.キャラ歩幅):
                     # self.local_y -= const.キャラ歩幅
@@ -93,7 +93,7 @@ class MainCharacter(Character):
                         self.状態 = const.状態.マップ切り替え
                         self.local_y = const.FIELD - const.キャラサイズ
                         self.global_y -= const.キャラサイズ
-        elif pyxel.btnp(pyxel.KEY_DOWN,const.HOLD,const.REPEAT):
+        elif pyxel.btnp(pyxel.KEY_DOWN,const.HOLD,const.REPEAT) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_DOWN,const.HOLD,const.REPEAT):
                 self.向き = const.向き.南
                 if self.前に進めるかな(self.global_x+5, self.global_y + const.キャラサイズ + const.キャラ歩幅, self.global_x + const.キャラサイズ-5 , self.global_y + const.キャラサイズ + const.キャラ歩幅) and not self.メンバーとの接触チェック(self.local_x, self.local_y + const.キャラサイズ ):
                     # self.local_y += const.キャラ歩幅

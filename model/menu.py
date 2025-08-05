@@ -11,13 +11,13 @@ class Menu:
         self.selected_index = 0
 
     def update(self):
-        if pyxel.btnp(pyxel.KEY_UP):
+        if pyxel.btnp(pyxel.KEY_UP) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_UP):
             pyxel.play(const.BGMチャンネル, [const.メニュー音])
             self.selected_index = (self.selected_index - 1) % len(self.menu)
-        elif pyxel.btnp(pyxel.KEY_DOWN):
+        elif pyxel.btnp(pyxel.KEY_DOWN) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_DOWN):
             pyxel.play(const.BGMチャンネル, [const.メニュー音])
             self.selected_index = (self.selected_index + 1) % len(self.menu)
-        elif pyxel.btnp(pyxel.KEY_RETURN):
+        elif pyxel.btnp(pyxel.KEY_RETURN) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B):
             self.menu[self.selected_index][1]()
 
     def draw(self):

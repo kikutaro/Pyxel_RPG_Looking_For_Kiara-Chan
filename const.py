@@ -285,7 +285,7 @@ class 状態(Enum):
 アイテム_サイリウム_配置 = [(4,84),(5,84),(4,85),(5,85)]
 
 #メッセージ系
-M_GAME_START = "Press Enter Key or Start Button"
+M_GAME_START = "Press Enter Key or A/B Button"
 M_SPEED = 2
 
 class M_TYPE(Enum):
@@ -331,5 +331,5 @@ A_WIDTH = Q_WIDTH
 A_HEIGHT= L_HEIGHT / 2
 
 #デバッグ系
-DEBUG = True
+DEBUG = False
 START_MODE = STORY.PLAY

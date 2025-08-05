@@ -120,18 +120,18 @@ class Quiz:
     def 回答する(self):
         match self.状態:
             case "問題":
-                if pyxel.btnp(pyxel.KEY_UP):
+                if pyxel.btnp(pyxel.KEY_UP) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_UP):
                         pyxel.play(const.BGMチャンネル, [const.メニュー音])
                         self.選択 -= 1
                         if self.選択 < 0:
                             self.選択 = len(self.問題[0]["選択肢"]) - 1
-                if pyxel.btnp(pyxel.KEY_DOWN):
+                if pyxel.btnp(pyxel.KEY_DOWN) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_DOWN):
                         pyxel.play(const.BGMチャンネル, [const.メニュー音])
                         self.選択 += 1
                         if self.選択 >= len(self.問題[0]["選択肢"]):
                             self.選択 = 0
 
-                if pyxel.btnp(pyxel.KEY_RETURN) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
+                if pyxel.btnp(pyxel.KEY_RETURN) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B):
                     if self.選択 == self.問題[self.問題番号]["正解"]:
                         self.正解数 += 1
                         self.アタリ()
