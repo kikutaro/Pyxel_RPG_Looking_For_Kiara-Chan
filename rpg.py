@@ -16,6 +16,10 @@ class RPG:
         pyxel.init(const.L_WIDTH, const.L_HEIGHT, title=const.TITLE)
         # リソース読み込み
         pyxel.load('my_resource.pyxres')
+
+        # フォント
+        self.t_font = pyxel.Font('assets/umplus_j12r.bdf')
+        self.m_font = pyxel.Font('assets/misaki_gothic_2nd.bdf')
         
         # 物語オブジェクトの管理
         # これにより、物語ごとにstartやupdate,drawを呼び出すことができる
