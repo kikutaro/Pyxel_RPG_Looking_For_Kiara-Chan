@@ -37,7 +37,7 @@ class Opening:
                             "あれ？",
                             "ところで、きあらは、どこ？"])
 
-        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+        if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btnp(pyxel.KEY_RETURN)):
             self.messanger = "あんな"
             self.message.complete = False
 
@@ -49,7 +49,7 @@ class Opening:
                         "さなつん、知らない？"])
             
             
-        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+        if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btnp(pyxel.KEY_RETURN)):
             self.messanger = "さなつん"
             self.message.complete = False
 
@@ -60,7 +60,7 @@ class Opening:
                             "まいかは？",
                             "きあらと一緒じゃなかった？"])
             
-        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+        if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btnp(pyxel.KEY_RETURN)):
             self.messanger = "まいか"
             self.message.complete = False
 
@@ -71,7 +71,7 @@ class Opening:
                              "本番までもう時間ない！",
                              "みんなできあらを探さなきゃ！"]) 
             
-        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+        if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btnp(pyxel.KEY_RETURN)):
             self.messanger = "ナレーター"
             self.message.complete = False
 
@@ -86,7 +86,7 @@ class Opening:
                     "きあらちゃんをみつけよう...！"]
                 )
             
-        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+        if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btnp(pyxel.KEY_RETURN)):
             self.rpg.change_story(const.STORY.PLAY)
 
     def draw(self):
