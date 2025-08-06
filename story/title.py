@@ -53,7 +53,7 @@ class Title:
                     member.local_y = const.L_HEIGHT / 2
             
             #リターンかスタートが押されたら音楽を止めてオープニングに遷移
-            if pyxel.btnp(pyxel.KEY_RETURN) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B):
+            if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btnp(pyxel.KEY_RETURN):
                 self.mode = const.OPENING_MODE.MENU
                 pyxel.stop()
                 self.メニュー表示()

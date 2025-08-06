@@ -181,16 +181,16 @@ class Book:
                 elif self.メニューIdx == 2:
                     pass
 
-                if pyxel.btnp(pyxel.KEY_LEFT) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
+                if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT) or pyxel.btnp(pyxel.KEY_LEFT):
                     if self.メニューIdx == 1 or self.メニューIdx == 2:
                         pyxel.play(const.BGMチャンネル, [const.メニュー音])
                         self.メニューIdx -= 1
-                if pyxel.btnp(pyxel.KEY_RIGHT) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
+                if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT) or pyxel.btnp(pyxel.KEY_RIGHT):
                     if self.メニューIdx == 0 or self.メニューIdx == 1:
                         pyxel.play(const.BGMチャンネル, [const.メニュー音])
                         self.メニューIdx += 1
 
-                if pyxel.btnp(pyxel.KEY_RETURN) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B):
+                if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btnp(pyxel.KEY_RETURN):
                     pyxel.play(const.BGMチャンネル, [const.メニュー音])
                     index =  list(self.メンバープロフィール.keys()).index(self.選択したメンバー)
                     if self.メニューIdx == 0:

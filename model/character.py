@@ -129,7 +129,7 @@ class Character():
             case "じろうさん":
                 self.message.話す(const.M_TYPE.WINDOW, self.名前,["らっしゃいらっしゃい", "たから釣ってってよ！"])
                 
-        if self.message.complete and pyxel.btnp(pyxel.KEY_RETURN) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B):
+        if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or self.message.complete and pyxel.btnp(pyxel.KEY_RETURN):
             self.状態変更(const.状態.歩く)
             self.message.complete = False
 
