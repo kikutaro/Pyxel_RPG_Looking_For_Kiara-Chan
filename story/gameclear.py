@@ -15,8 +15,8 @@ class Gameclear:
 
     def draw(self):
         pyxel.cls(const.色.WHITE.value)
-        pyxel.text(40,self.h,"Created By イコまい", const.色.BLACK.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
-        pyxel.text(40,self.h + 10,"Please visit https://equal-maika.jp", const.色.BLACK.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+        pyxel.text(40,self.h,"Created By イコまい", const.色.BLACK.value, self.rpg.m_font)
+        pyxel.text(40,self.h + 10,"Please visit https://equal-maika.jp", const.色.BLACK.value, self.rpg.m_font)
         pyxel.blt(40,self.h+20,0,
                         160,80,
                         const.キャラサイズ,const.キャラサイズ, const.色.WHITE.value)

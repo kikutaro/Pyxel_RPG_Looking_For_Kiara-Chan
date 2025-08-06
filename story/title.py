@@ -118,12 +118,12 @@ class Title:
 
     def オープニング表示(self):
         if self.title_y < const.GAME_TITLE_POS_Y:
-            pyxel.text(self.text_center, 20 + self.title_y , const.TITLE, 7, pyxel.Font('assets/umplus_j12r.bdf'))
-            pyxel.text(self.text_center + 1, 20 + self.title_y + 1 , const.TITLE, 2, pyxel.Font('assets/umplus_j12r.bdf'))
+            pyxel.text(self.text_center, 20 + self.title_y , const.TITLE, 7, self.rpg.t_font)
+            pyxel.text(self.text_center + 1, 20 + self.title_y + 1 , const.TITLE, 2, self.rpg.t_font)
         else:
-            pyxel.text(self.text_center, 20 + const.GAME_TITLE_POS_Y , const.TITLE, 7, pyxel.Font('assets/umplus_j12r.bdf'))
-            pyxel.text(self.text_center + 1, 20 + const.GAME_TITLE_POS_Y, const.TITLE, 2, pyxel.Font('assets/umplus_j12r.bdf'))
-            pyxel.text(self.text_center, 35 + const.GAME_TITLE_POS_Y , const.M_GAME_START, pyxel.frame_count % 16,pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+            pyxel.text(self.text_center, 20 + const.GAME_TITLE_POS_Y , const.TITLE, 7, self.rpg.t_font)
+            pyxel.text(self.text_center + 1, 20 + const.GAME_TITLE_POS_Y, const.TITLE, 2, self.rpg.t_font)
+            pyxel.text(self.text_center, 35 + const.GAME_TITLE_POS_Y , const.M_GAME_START, pyxel.frame_count % 16,self.rpg.m_font)
 
 
     def メニュー表示(self):
