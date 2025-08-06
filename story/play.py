@@ -9,9 +9,6 @@ from model.music import Music
 
 class Play:
     def __init__(self, rpg):
-        if const.DEBUG:
-            print("Title.__init__")
-
         self.rpg = rpg
         self.room = [0,0]
         self.timer = Timer()
@@ -46,8 +43,6 @@ class Play:
         self.情報表示 = True
 
     def start(self):
-        if const.DEBUG:
-            print("Play.start()")
         self.舞香ちゃん.getMusic().BGMランダム再生()
         self.舞香ちゃん.getMusic().BGM名表示()
         self.message.messanger = "まいか"

@@ -114,7 +114,6 @@ class Character():
             case "りさ":
                 self.message.話す(const.M_TYPE.WINDOW, self.名前,["ようすがおかしい！","ようすがおかしい！"])
             case "さっしー":
-                print(self.舞香ちゃん情報[const.舞香ちゃん情報キー.会話済メンバー数])
                 if self.舞香ちゃん情報[const.舞香ちゃん情報キー.会話済メンバー数] == 8:
                     self.message.話す(const.M_TYPE.WINDOW, self.名前,["さすがまいか","みんなから話を聞いたみたいだね！"])
                 else:

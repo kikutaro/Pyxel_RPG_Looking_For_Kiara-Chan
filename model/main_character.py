@@ -134,7 +134,6 @@ class MainCharacter(Character):
             pyxel.play(const.BGMチャンネル, [const.階段音])
             self.global_x = const.階段脇_ステージ裏[const.階段_X座標Idx]
             self.global_y = const.階段脇_ステージ裏[const.階段_Y座標Idx]
-            print(self.global_x, self.global_y)
         elif pyxel.tilemaps[0].pget(x //const.CELL ,y //const.CELL) in const.アイテム_拡声器_識別:
             pyxel.play(const.BGMチャンネル, [const.アイテム取得])
             pyxel.tilemaps[0].pset(const.アイテム_拡声器_配置[0][0],const.アイテム_拡声器_配置[0][1],const.タイル_拡声器とったあと[0])

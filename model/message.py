@@ -70,14 +70,3 @@ class Message:
         start_x = (const.L_WIDTH - max_message_len * const.FONT_SIZE) / 2 - 1
         start_y = (const.L_HEIGHT - len(messages) * const.FONT_SIZE) / 2- 1
         return start_x, start_y
-    
-    def メッセージデバッグ(self):
-        print("メッセージデバッグ")
-        print("messanger:" + str(self.messanger))
-        print("message_line:" + str(self.message_line))
-        print("message_idx:" + str(self.message_idx))
-        print("messages:" + str(self.messages))
-        print("messages id:" + str(id(self.messages)))
-        print("m_type:" + str(self.m_type))
-        print("start_pos:" + str(self.start_pos))
-        print("complete:" + str(self.complete))

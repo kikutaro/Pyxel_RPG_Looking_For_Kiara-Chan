@@ -12,9 +12,6 @@ from story import Title, Bgm, Opening, Play, Book, PlayQuiz, Ending, Gameclear
 # RPG本体
 class RPG:
     def __init__(self):
-        if const.DEBUG:
-            print("RPG.__init__")
-
         # ウィンドウ初期化
         pyxel.init(const.L_WIDTH, const.L_HEIGHT, title=const.TITLE)
         # リソース読み込み
@@ -39,9 +36,6 @@ class RPG:
 
     # 物語の切り替え
     def change_story(self, story):
-        if const.DEBUG:
-            print("RPG.change_story")
-
         self.story = story
         self.story_manager[self.story].start()
 

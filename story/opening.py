@@ -5,9 +5,6 @@ from model.message import Message
 
 class Opening:
     def __init__(self, rpg):
-        if const.DEBUG:
-            print("Opening.__init__")
-
         self.rpg = rpg
         self.messanger = None
 
@@ -29,8 +26,6 @@ class Opening:
         self.messanger = "さっしー"
            
     def start(self):
-        if const.DEBUG:
-            print("Opening.start()")
         pyxel.play(1, [30, 31], None, True, True)
         
     def update(self):

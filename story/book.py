@@ -5,9 +5,6 @@ from enum import Enum, auto
 
 class Book:
     def __init__(self, rpg):
-        if const.DEBUG:
-            print("Book.__init__")
-
         self.メンバープロフィール = {
             'おおたにえみり': [self.おおたにえみり,{
                 'けつえきがた': 'O',

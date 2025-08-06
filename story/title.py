@@ -5,9 +5,6 @@ from model.character import Character
 
 class Title:
     def __init__(self, rpg):
-        if const.DEBUG:
-            print("Title.__init__")
-
         self.rpg = rpg
         #モード
         self.mode = const.OPENING_MODE.OPENING

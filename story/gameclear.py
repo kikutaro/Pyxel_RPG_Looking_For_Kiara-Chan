@@ -3,9 +3,6 @@ import const
 
 class Gameclear:
     def __init__(self, rpg):
-        if const.DEBUG:
-            print("Gameclear.__init__")
-
         self.rpg = rpg
         self.h = const.FIELD
 

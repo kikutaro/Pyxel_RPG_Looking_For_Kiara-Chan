@@ -5,9 +5,6 @@ from model.menu import Menu
 
 class Bgm:
     def __init__(self, rpg):
-        if const.DEBUG:
-            print("Bgm.__init__")
-
         self.rpg = rpg
         self.music = Music()
         self.menu = Menu(
@@ -18,8 +15,7 @@ class Bgm:
         self.music.music_list.append(("メニューに戻る", self.メニューに戻る))
 
     def start(self):
-        if const.DEBUG:
-            print("Bgm.start()")
+        pass
 
     def update(self):
         self.menu.update()

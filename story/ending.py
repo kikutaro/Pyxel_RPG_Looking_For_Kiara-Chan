@@ -5,9 +5,6 @@ from model.message import Message
 
 class Ending:
     def __init__(self, rpg):
-        if const.DEBUG:
-            print("ending.__init__")
-
         self.rpg = rpg
         self.messanger = None
 
@@ -29,8 +26,7 @@ class Ending:
         self.messanger = "さっしー"
 
     def start(self):
-        if const.DEBUG:
-            print("Ending.start()")
+        pass
     
     def update(self):
         if self.messanger == "さっしー":
