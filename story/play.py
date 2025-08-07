@@ -22,7 +22,7 @@ class Play:
         self.members = [
             Character(const.TILE*12,const.TILE*6,"はなちゃん"),
             Character(const.TILE*21,const.TILE*23,"みりにゃ"),
-            Character(const.TILE*36,const.TILE*15,"しょこ"),
+            Character(const.TILE*40,const.TILE*10,"しょこ"),
             Character(const.TILE*51,const.TILE*6,"あんな"),
             Character(const.TILE*40,const.TILE*35,"さなつん"),
             Character(const.TILE*24,const.TILE*40,"ひとみ"),
