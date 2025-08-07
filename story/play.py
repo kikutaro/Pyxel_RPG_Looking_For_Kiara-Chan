@@ -5,7 +5,6 @@ from model.character import Character
 from model.message import Message
 from model.timer import Timer
 from model.item import Item
-from model.music import Music
 
 class Play:
     def __init__(self, rpg):
@@ -54,7 +53,8 @@ class Play:
         if ("さなつん" in self.舞香ちゃん.会話済メンバー and self.舞香ちゃん.global_x // const.CELL, self.舞香ちゃん.global_y // const.CELL) in const.くろしままえ and not self.くろしまトーク and self.舞香ちゃん.向き == const.向き.北:
             self.message.話す(const.M_TYPE.WINDOW, 
                             "くろしまくん", 
-                            ["さなちゃんとはなしたようだね","さなきあにはおせわになってるからヒントあげるよ", "階段を使ってね。"])
+                            ["さなちゃんとはなしたようだね","さなきあにはおせわになってるから魔法をかけてあげよう", "き・り・が・み・ね", "さあ、あるいてみて！"])
+            const.キャラ歩幅 = 8
 
             if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
                 self.message.complete = False
