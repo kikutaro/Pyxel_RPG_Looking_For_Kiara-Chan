@@ -30,10 +30,8 @@ class MainCharacter(Character):
         self.動作[self.状態][const.動作_状態_処理]()
 
     def draw(self):
-        pyxel.text(150,220, "L:" + str(self.local_x) + " " + str(self.local_y) + " G:" + str(self.global_x) + " " + str(self.global_y), const.色.BLACK.value)
         self.動作[self.状態][const.動作_状態_描画]()
         self.message.表示()
-        # self.場所表示(self.global_x, self.global_y)
 
     def 前に進めるかな(self, x1, y1, x2, y2):
         return pyxel.tilemaps[0].pget(x1 //const.CELL ,y1 //const.CELL) in const.歩けるタイル and pyxel.tilemaps[0].pget(x2 //const.CELL ,y2 //const.CELL) in const.歩けるタイル

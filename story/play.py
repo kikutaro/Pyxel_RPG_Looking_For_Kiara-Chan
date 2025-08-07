@@ -62,7 +62,6 @@ class Play:
                 self.くろしまトーク = True
 
         if self.舞香ちゃん.部屋の場所() == const.最後の部屋:
-            print("play " + str(self.舞香ちゃん.global_x) + " "+  str(self.舞香ちゃん.global_y))
             if self.message.messanger == "まいか" and len(self.舞香ちゃん.持ってるアイテム()) == 0 or const.アイテム.さいりうむ.value not in self.舞香ちゃん.持ってるアイテム():
                 self.message.話す(const.M_TYPE.WINDOW,
                             "まいか",
@@ -212,7 +211,6 @@ class Play:
             for member in self.members:
                 if member.部屋の場所() == self.舞香ちゃん.部屋の場所():
                     if member.名前 == "さっしー" and member.舞香ちゃん情報[const.舞香ちゃん情報キー.会話済メンバー数] == 10:
-                        print(member.global_x, member.global_y)
                         member.global_x = 528 #const.TILE * 66
                         member.global_y = 496 #const.TILE * 62
                         member.向き = const.向き.東 
