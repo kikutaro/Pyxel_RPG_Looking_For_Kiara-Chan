@@ -93,7 +93,7 @@ class MainCharacter(Character):
                         self.global_y -= const.キャラサイズ
         elif pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_DOWN,const.HOLD,const.REPEAT) or pyxel.btnp(pyxel.KEY_DOWN,const.HOLD,const.REPEAT):
                 self.向き = const.向き.南
-                if self.前に進めるかな(self.global_x+5, self.global_y + const.キャラサイズ + const.キャラ歩幅, self.global_x + const.キャラサイズ-5 , self.global_y + const.キャラサイズ + const.キャラ歩幅) and not self.メンバーとの接触チェック(self.local_x, self.local_y + const.キャラサイズ ):
+                if self.前に進めるかな(self.global_x+5, self.global_y + const.キャラサイズ + const.キャラ歩幅, self.global_x + const.キャラサイズ-5 , self.global_y + const.キャラサイズ + const.キャラ歩幅) and not self.メンバーとの接触チェック(self.local_x, self.local_y + const.キャラ歩幅 ):
                     # self.local_y += const.キャラ歩幅
                     self.global_y += const.キャラ歩幅
 

@@ -75,6 +75,8 @@ class Opening:
             self.messanger = "ナレーター"
             self.message.complete = False
 
+            pyxel.stop(1)
+
         if self.messanger == "ナレーター":
             self.message.話す(const.M_TYPE.STORY,None,
                  ["ライブとうじつのある日",
