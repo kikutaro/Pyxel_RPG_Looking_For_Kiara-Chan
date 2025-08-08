@@ -125,7 +125,7 @@ class Character():
             case "しのぶさん":
                 self.message.話す(const.M_TYPE.WINDOW, self.名前,["ねえ、きあらちゃん衣装まちがえてない？", "こまったわねぇ..."])
             case "はせがわさん":
-                self.message.話す(const.M_TYPE.WINDOW, self.名前,["さしはらに連れてきてもらっちゃった", "緊張するー"])
+                self.message.話す(const.M_TYPE.WINDOW, self.名前,["おれ本当はきあらちゃんのことが..."])
             case "じろうさん":
                 self.message.話す(const.M_TYPE.WINDOW, self.名前,["らっしゃいらっしゃい", "たから釣ってってよ！"])
                 
