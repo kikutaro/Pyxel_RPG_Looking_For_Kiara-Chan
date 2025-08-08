@@ -197,8 +197,9 @@ class Play:
 
     def draw(self):
         if not self.クリア:
-            pyxel.text(0,0, str(pyxel.frame_count), 7)
+            # pyxel.text(0,0, str(pyxel.frame_count), 7)
             self.マップ更新(self.舞香ちゃん.global_x, self.舞香ちゃん.global_y)
+            # print(self.舞香ちゃん.global_x, self.舞香ちゃん.global_y)
             if self.情報表示:
                 self.舞香ちゃん.getMusic().BGM名表示()
                 self.舞香ちゃん.getItem().表示()
@@ -260,6 +261,6 @@ class Play:
 
     def マップ更新(self,x座標,y座標):
         pyxel.cls(const.色.WHITE.value)
-        描画マップx = (x座標 + const.キャラサイズ) // const.FIELD * const.FIELD
-        描画マップy = (y座標 + const.キャラサイズ) // const.FIELD * const.FIELD
+        描画マップx = (x座標 + const.キャラサイズ // 2) // const.FIELD * const.FIELD
+        描画マップy = (y座標 + const.キャラサイズ // 2) // const.FIELD * const.FIELD
         pyxel.bltm(0,0,0, 描画マップx, 描画マップy, const.FIELD,const.FIELD)
