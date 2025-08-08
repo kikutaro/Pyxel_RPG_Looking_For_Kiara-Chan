@@ -29,7 +29,7 @@ class Play:
             Character(const.TILE*61,const.TILE*57,"りさ"),
             Character(const.TILE*32,const.TILE*30,"さっしー", const.向き.東),
             Character(const.TILE*40,const.TILE*56,"いなちゃん"),
-            Character(const.TILE*40,const.TILE*59,"ゆずにい"),
+            Character(const.TILE*60,const.TILE*42,"ゆずにい"),
             Character(const.TILE*10,const.TILE*70,"しのぶさん"),
             Character(const.TILE*56,const.TILE*29,"はせがわさん"),
             Character(const.TILE*25,const.TILE*54,"じろうさん"),
@@ -217,6 +217,7 @@ class Play:
                         member.向き = const.向き.東 
                         member.draw()
                     member.draw()
+                    break
             self.舞香ちゃん.draw()
             self.message.表示()
 
