@@ -45,6 +45,7 @@ class Play:
         self.舞香ちゃん.getMusic().BGMランダム再生()
         self.舞香ちゃん.getMusic().BGM名表示()
         self.message.messanger = "まいか"
+        self.timer.カウントスタート()
 
     def update(self):
         if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_X) or pyxel.btnp(pyxel.KEY_A):
