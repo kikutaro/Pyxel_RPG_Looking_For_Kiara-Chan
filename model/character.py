@@ -80,20 +80,20 @@ class Character():
                 pyxel.blt(self.local_x,self.local_y,0,
                         const.キャラ[self.名前]['右'][self.向き][0],
                         const.キャラ[self.名前]['右'][self.向き][1],
-                        const.キャラサイズ,const.キャラサイズ, const.色.WHITE.value)
+                        const.キャラサイズ,const.キャラサイズ, const.キャラ透過色)
             #左
             else:
                 pyxel.blt(self.local_x,self.local_y,0,
                         const.キャラ[self.名前]['左'][self.向き][0],
                         const.キャラ[self.名前]['左'][self.向き][1]
-                        ,const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
+                        ,const.キャラサイズ,const.キャラサイズ,const.キャラ透過色)
                 
     def 立ち止まる(self):
         # if self.状態 == const.状態.立ち止まる:
             pyxel.blt(self.local_x,self.local_y,0,
                     const.キャラ[self.名前]['右'][self.向き][0],
                     const.キャラ[self.名前]['右'][self.向き][1],
-                    const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
+                    const.キャラサイズ,const.キャラサイズ,const.キャラ透過色)
                 
     def 話す(self):
         match self.名前:
