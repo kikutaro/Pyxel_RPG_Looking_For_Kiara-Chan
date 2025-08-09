@@ -166,8 +166,7 @@ class Book:
         self.選択したメンバー = メンバー名
 
     def start(self):
-        if const.DEBUG:
-            print("Book.start()")
+        pass
 
     def update(self):
         match self.モード:
@@ -214,11 +213,11 @@ class Book:
                 self.member.draw()
             case self.モードメンバ:
                 pyxel.cls(0)
-                pyxel.text(10, 10, "メンバー紹介", 7, self.rpg.t_font)
+                pyxel.text(10, 10, "メンバー紹介", 7, self.rpg.m_font)
                 
                 #なまえ
                 pyxel.rectb(10, 20, 80, 20, const.色.WHITE.value)
-                pyxel.text(15, 25,  self.選択したメンバー, 7, self.rpg.t_font)
+                pyxel.text(15, 25,  self.選択したメンバー, 7, self.rpg.m_font)
 
                 #どっと
                 pyxel.rectb(100, 20, 65, 20, const.色.WHITE.value)
