@@ -6,86 +6,114 @@ class Music:
     def __init__(self):
         self.num = -1
         self.music_list = [
-            ["樹愛羅助けに来たぞ", self.play_樹愛羅助けに来たぞ],
             ["＝LOVE", self.play_LOVE],
+            ["僕らの制服クリスマス", self.play_僕らの制服クリスマス],
+            ["樹愛羅助けに来たぞ", self.play_樹愛羅助けに来たぞ],
             ["探せダイヤモンドリリー1", self.play_探せダイヤモンドリリー1],
             ["探せダイヤモンドリリー2", self.play_探せダイヤモンドリリー2],
-            ["真夜中マーメイド", self.play_真夜中マーメイド],
-            ["この空がトリガー", self.play_この空がトリガー],
+            ["虹の素", self.play_虹の素],
             ["しゅきぴ", self.play_しゅきぴ],
-            ["絶対アイドル辞めないで", self.play_絶対アイドル辞めないで],
-            ["仲直りシュークリーム", self.play_仲直りシュークリーム],
-            ["とくべチュして", self.play_とくべチュして],
-            ["ナツマトペ", self.play_ナツマトペ],
             ["夏祭り恋慕う", self.play_夏祭り恋慕う],
             ["お姫様にしてよ", self.play_お姫様にしてよ],
             ["あの子コンプレックス", self.play_あの子コンプレックス],
-            ["僕らの制服クリスマス", self.play_僕らの制服クリスマス],
+            ["真夜中マーメイド", self.play_真夜中マーメイド],
+            ["この空がトリガー", self.play_この空がトリガー],
+            ["ナツマトペ", self.play_ナツマトペ],
+            ["ラストノートしかしらない", self.play_ラストノートしか知らない],
+            ["呪って呪って", self.play_呪って呪って],
+            ["絶対アイドル辞めないで", self.play_絶対アイドル辞めないで],
+            ["仲直りシュークリーム", self.play_仲直りシュークリーム],
+            ["海とレモンティー", self.play_海とレモンティー],
+            ["とくべチュして", self.play_とくべチュして],
+            ["超特急逃走中", self.play_超特急逃走中],
         ]
 
     def play_樹愛羅助けに来たぞ(self):
+        pyxel.stop()
         pyxel.playm(0, loop=True)
 
     def play_LOVE(self):
+        pyxel.stop()
         pyxel.playm(1, loop=True)
 
     def play_探せダイヤモンドリリー1(self):
+        pyxel.stop()
         pyxel.playm(2, loop=True)
 
     def play_探せダイヤモンドリリー2(self):
+        pyxel.stop()
         pyxel.playm(3, loop=True)
 
     def play_真夜中マーメイド(self):
+        pyxel.stop()
         pyxel.play(0, [20, 21, 22])
 
     def play_この空がトリガー(self):
+        pyxel.stop()
         pyxel.play(0, [23, 24, 25])
 
     def play_しゅきぴ(self):
+        pyxel.stop()    
         pyxel.play(0, [26,27])
 
     def play_超特急逃走中(self):
+        pyxel.stop()
         pyxel.play(0, 28)
 
     def play_仲直りシュークリーム(self):
+        pyxel.stop()
         pyxel.play(0, 29)
 
     def play_とくべチュして(self):
+        pyxel.stop()
         pyxel.play(0, [30, 31])
 
     def play_ナツマトペ(self):
+        pyxel.stop()
         pyxel.play(0, 32)
 
     def play_夏祭り恋慕う(self):
+        pyxel.stop()
         pyxel.play(0, [33, 34])
 
     def play_ウィークエンドシトロン(self):
+        pyxel.stop()
         pyxel.play(0, 35)
 
-    #36抜け番
+    def play_ラストノートしか知らない(self):
+        pyxel.stop()
+        pyxel.play(0, 36)
 
     def play_お姫様にしてよ(self):
+        pyxel.stop()
         pyxel.play(0, [37, 38, 39])
 
     def play_あの子コンプレックス(self):
+        pyxel.stop()
         pyxel.play(0, [40, 41, 42])
 
     def play_僕らの制服クリスマス(self):
+        pyxel.stop()
         pyxel.play(0, [43, 44])
 
     def play_虹の素(self):
+        pyxel.stop()
         pyxel.play(0, 46)
 
     def play_海とレモンティー(self):
+        pyxel.stop()
         pyxel.play(0, [47, 48])
 
     def play_呪って呪って(self):
+        pyxel.stop()
         pyxel.play(0, [49, 50])
 
     def play_絶対アイドル辞めないで(self):
+        pyxel.stop()
         pyxel.play(0, [54,55]) 
 
     def play_イコラブ沼(self):
+        pyxel.stop()
         pyxel.play(0, 59)
 
     #ややこしいがBGMはconstで定義、上のリストは全曲リスト
