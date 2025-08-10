@@ -42,6 +42,7 @@ class Play:
         self.情報表示 = True
 
     def start(self):
+        pyxel.stop()
         self.舞香ちゃん.getMusic().BGMランダム再生()
         self.舞香ちゃん.getMusic().BGM名表示()
         self.message.messanger = "まいか"
