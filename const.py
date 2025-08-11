@@ -109,7 +109,7 @@ T_PADDING = 2
     
     '物販／外': [(0,TILE*15),(TILE*48,TILE*63)],
     'CD宝釣り／外': [(TILE*16,TILE*31),(TILE*48,TILE*63)],
-    '入場口／ほーる': [(TILE*32,TILE*47),(TILE*48,TILE*63)],
+    '入場口': [(TILE*32,TILE*47),(TILE*48,TILE*63)],
     '入場口／駐車場': [(TILE*48,TILE*63),(TILE*48,TILE*63)],
 
     '隠し部屋':[(TILE*16,TILE*64),(TILE*32,TILE*80)],
