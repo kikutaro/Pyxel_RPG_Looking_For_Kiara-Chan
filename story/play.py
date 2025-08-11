@@ -73,6 +73,7 @@ class Play:
                     self.舞香ちゃん.global_x = const.階段脇_ステージ裏[const.階段_X座標Idx]
                     self.舞香ちゃん.global_y = const.階段脇_ステージ裏[const.階段_Y座標Idx]
                     self.message.complete = False
+                    self.message.messages.clear()
             else:
                 if self.message.messanger == "まいか" and self.message.cnt == 0:
                         self.message.話す(const.M_TYPE.WINDOW,
@@ -213,13 +214,15 @@ class Play:
             
             for member in self.members:
                 if member.部屋の場所() == self.舞香ちゃん.部屋の場所():
-                    if member.名前 == "さっしー" and member.舞香ちゃん情報[const.舞香ちゃん情報キー.会話済メンバー数] == 10:
-                        member.global_x = 528 #const.TILE * 66
-                        member.global_y = 496 #const.TILE * 62
+                    if member.名前 == "さっしー" and member.舞香ちゃん情報[const.舞香ちゃん情報キー.会話済メンバー数] == 8:
+                        member.global_x = 528
+                        member.global_y = 496
+                        member.local_x = member.global_x % const.FIELD
+                        member.local_y = member.global_y % const.FIELD
                         member.向き = const.向き.東 
                         member.draw()
                     member.draw()
-                    break
+                    # break
             self.舞香ちゃん.draw()
             self.message.表示()
 
