@@ -116,6 +116,8 @@ class MainCharacter(Character):
         return False
 
     def 足元チェック(self, x, y):
+        x = x + const.キャラサイズ // 2
+        y = y + const.キャラサイズ // 2
         if pyxel.tilemaps[0].pget(x //const.CELL ,y //const.CELL) in const.階段_ケータリング:
              pyxel.play(const.BGMチャンネル, [const.階段音])
              self.global_x = const.階段脇_衣装部屋[const.階段_X座標Idx]
