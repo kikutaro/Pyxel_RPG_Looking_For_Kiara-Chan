@@ -35,7 +35,6 @@ class Title:
             ("おーぷにんぐから", lambda: self.rpg.change_story(const.STORY.OPENING)),
             ("ゲームから", lambda: self.rpg.change_story(const.STORY.PLAY)),
             ("めんばーずかん", lambda: self.rpg.change_story(const.STORY.BOOK)),
-            ("えんでぃんぐ", lambda: self.rpg.change_story(const.STORY.ENDING)),
             ("くいず", lambda: self.rpg.change_story(const.STORY.QUIZ)),
             ("みゅーじっくぼっくす", lambda: self.rpg.change_story(const.STORY.BGM))
             ])
