@@ -27,6 +27,7 @@ class Music:
             ["とくべチュして", self.play_とくべチュして],
             ["超特急逃走中", self.play_超特急逃走中],
         ]
+        self.m_font = pyxel.Font('assets/misaki_gothic_2nd.bdf')
 
     def play_樹愛羅助けに来たぞ(self):
         pyxel.stop()
@@ -130,4 +131,4 @@ class Music:
     def BGM名表示(self):
         pyxel.rect(const.B_POS_X, const.B_POS_Y, const.B_WIDTH, const.B_HEIGHT, const.色.BLUE.value)
         if self.num != -1:
-            pyxel.text(const.B_POS_X + const.T_PADDING, const.B_POS_Y + const.T_PADDING, self.BGM名取得(), const.色.WHITE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+            pyxel.text(const.B_POS_X + const.T_PADDING, const.B_POS_Y + const.T_PADDING, self.BGM名取得(), const.色.WHITE.value, self.m_font)
