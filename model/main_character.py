@@ -17,6 +17,8 @@ class MainCharacter(Character):
         self.music = Music()
         self.item = Item()
         self.気持ち = None
+        self.m_font = pyxel.Font('assets/misaki_gothic_2nd.bdf')
+        self.場所 = "楽屋"
 
         self.動作 = {
              const.状態.立ち止まる: (lambda: print("立ち止まる"), lambda: self.立ち止まる()),
@@ -164,13 +166,14 @@ class MainCharacter(Character):
         if self.状態 == const.状態.マップ切り替え:
             self.マップ切り替えタイマー -= 1
             self.music.BGMランダム再生()
+            self.場所判定(self.global_x,self.global_y)
             if self.マップ切り替えタイマー == 0:
                 self.状態 = const.状態.歩く
                 self.マップ切り替えタイマー = 15
 
     def マップアイキャッチ(self):
         pyxel.cls(const.色.RED.value)
-        pyxel.text((const.L_WIDTH - len(const.TITLE) * const.FONT_SIZE )/2, const.L_HEIGHT/2, const.TITLE, const.色.PINK.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+        pyxel.text((const.L_WIDTH - len(const.TITLE) * const.FONT_SIZE )/2, const.L_HEIGHT/2, const.TITLE, const.色.PINK.value, self.m_font)
 
     def 場所判定(self,x,y):
         # マップの場所を判定して、部屋の場所を返す
@@ -178,13 +181,11 @@ class MainCharacter(Character):
             部屋の座標 = const.部屋[部屋の種類]
             if ((部屋の座標[0][0] <= x <= 部屋の座標[0][1] and 部屋の座標[1][0] <= y <= 部屋の座標[1][1]) or 
             (部屋の座標[0][0] < x < 部屋の座標[0][1] and 部屋の座標[1][0] < y < 部屋の座標[1][1])):
-                 return 部屋の種類
-        return ""
+                 self.場所 = 部屋の種類
 
     def 場所表示(self,x,y):
-         if self.状態 != const.状態.マップ切り替え:
-             pyxel.rect(const.R_POS_x,const.R_POS_y,const.R_WIDTH,const.R_HEIGHT, const.色.ORANGE.value)
-             pyxel.text(const.R_POS_x + const.FONT_SIZE/2, const.R_POS_y + 2 ,self.場所判定(x,y), const.色.WHITE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+            pyxel.rect(const.R_POS_x,const.R_POS_y,const.R_WIDTH,const.R_HEIGHT, const.色.ORANGE.value)
+            pyxel.text(const.R_POS_x + const.FONT_SIZE/2, const.R_POS_y + 2 ,self.場所, const.色.WHITE.value, self.m_font)
 
     def getMusic(self):
         return self.music
