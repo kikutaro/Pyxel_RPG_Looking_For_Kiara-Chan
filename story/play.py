@@ -191,6 +191,7 @@ class Play:
                     self.舞香ちゃん.global_x = const.階段脇_ステージ裏[const.階段_X座標Idx]
                     self.舞香ちゃん.global_y = const.階段脇_ステージ裏[const.階段_Y座標Idx]
                     self.message.cnt = 0
+                    self.message.messages.clear()
         else:
             self.舞香ちゃん.update(self.members)
             for member in self.members:
