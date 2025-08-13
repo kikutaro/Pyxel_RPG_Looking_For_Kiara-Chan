@@ -10,6 +10,14 @@ class Menu:
         self.menu = メニュー
         self.selected_index = 0
 
+        self.メニューで一番長い文字 = len(max(self.menu, key=lambda x: len(x[0]))[0])
+        self.メニューの行数 = len(self.menu)
+
+        self.メニュー開始位置X = (const.FIELD - self.メニューで一番長い文字 * const.FONT_SIZE) / 2
+        self.メニューの開始位置Y = (const.FIELD - self.メニューの行数 * const.メニュー縦幅) / 2
+
+        self.m_font = pyxel.Font('assets/misaki_gothic_2nd.bdf')
+
     def update(self):
         if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_UP) or pyxel.btnp(pyxel.KEY_UP):
             pyxel.play(const.BGMチャンネル, [const.メニュー音])
@@ -24,16 +32,10 @@ class Menu:
         if self.背景色 is not None:
             pyxel.cls(self.背景色)
 
-        メニューで一番長い文字 = len(max(self.menu, key=lambda x: len(x[0]))[0])
-        メニューの行数 = len(self.menu)
-
-        メニュー開始位置X = (const.FIELD - メニューで一番長い文字 * const.FONT_SIZE) / 2
-        メニューの開始位置Y = (const.FIELD - メニューの行数 * const.メニュー縦幅) / 2
-
         for idx, val in enumerate(self.menu):
             if idx == self.selected_index:
-                pyxel.text(メニュー開始位置X - const.FONT_SIZE, メニューの開始位置Y + idx *const.メニュー縦幅, ">", self.選択色, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
-                pyxel.text(メニュー開始位置X, メニューの開始位置Y + idx * const.メニュー縦幅, val[0], self.選択色, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+                pyxel.text(self.メニュー開始位置X - const.FONT_SIZE, self.メニューの開始位置Y + idx *const.メニュー縦幅, ">", self.選択色, self.m_font)
+                pyxel.text(self.メニュー開始位置X, self.メニューの開始位置Y + idx * const.メニュー縦幅, val[0], self.選択色, self.m_font)
             else:
-                pyxel.text(メニュー開始位置X, メニューの開始位置Y + idx * const.メニュー縦幅, " ", self.文字色, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
-                pyxel.text(メニュー開始位置X, メニューの開始位置Y + idx * const.メニュー縦幅, val[0], self.文字色, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+                pyxel.text(self.メニュー開始位置X, self.メニューの開始位置Y + idx * const.メニュー縦幅, " ", self.文字色, self.m_font)
+                pyxel.text(self.メニュー開始位置X, self.メニューの開始位置Y + idx * const.メニュー縦幅, val[0], self.文字色, self.m_font)
