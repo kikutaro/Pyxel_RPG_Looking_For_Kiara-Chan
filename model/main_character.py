@@ -179,9 +179,9 @@ class MainCharacter(Character):
         # マップの場所を判定して、部屋の場所を返す
         for 部屋の種類 in const.部屋:
             部屋の座標 = const.部屋[部屋の種類]
-            if ((部屋の座標[0][0] <= x <= 部屋の座標[0][1] and 部屋の座標[1][0] <= y <= 部屋の座標[1][1]) or 
-            (部屋の座標[0][0] < x < 部屋の座標[0][1] and 部屋の座標[1][0] < y < 部屋の座標[1][1])):
+            if (部屋の座標[0][0] <= x <= 部屋の座標[0][1] and 部屋の座標[1][0] <= y <= 部屋の座標[1][1]):
                  self.場所 = 部屋の種類
+                 break
 
     def 場所表示(self,x,y):
             pyxel.rect(const.R_POS_x,const.R_POS_y,const.R_WIDTH,const.R_HEIGHT, const.色.ORANGE.value)
