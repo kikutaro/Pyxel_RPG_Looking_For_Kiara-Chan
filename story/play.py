@@ -58,7 +58,7 @@ class Play:
                             ["さなちゃんとはなしたようだね","さなきあにはおせわになってるから魔法をかけてあげよう", "き・り・が・み・ね", "さあ、あるいてみて！"])
             const.キャラ歩幅 = 8
 
-            if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+            if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
                 self.message.complete = False
                 self.message.messages.clear()
                 self.くろしまトーク = True
