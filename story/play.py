@@ -257,7 +257,7 @@ class Play:
                     const.キャラ['とくべちゅきあら']['左'][const.向き.南][1],
                     const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
 
-            mes4 = self.timer.表示時間() + "秒"
+            mes4 = self.timer.経過時間 + "秒"
             pyxel.text(self.X軸センタリング(mes4, const.TITLE_FONT_SIZE), 145, mes4, const.色.BLACK.value, self.rpg.t_font)
 
             if pyxel.btn(pyxel.KEY_RETURN):
