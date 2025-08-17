@@ -69,7 +69,7 @@ class Play:
                             "まいか",
                             ["うわっ、なにここ！？","暗くて何も見えない...戻ろう"])
                     
-                if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+                if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
                     self.舞香ちゃん.global_x = const.階段脇_ステージ裏[const.階段_X座標Idx]
                     self.舞香ちゃん.global_y = const.階段脇_ステージ裏[const.階段_Y座標Idx]
                     self.message.complete = False
@@ -80,7 +80,7 @@ class Play:
                                     "まいか",
                                     ["さいりうむの明かりで見える！","あ！きあらちゃん！！！", "こんなところにいたの！？", "え、寝てる！？"])
 
-                        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+                        if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
                             self.message.messanger = "まいか"
                             self.message.complete = False
                             self.message.cnt += 1
@@ -98,7 +98,7 @@ class Play:
                                     "まいか",
                                     ["そうだ、メガホン！", "あーあー", "きあらちゃん、起きてー！"])
                         
-                        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+                        if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
                             self.message.messanger = "きあら"
                             self.message.complete = False
                             self.message.cnt += 1
@@ -108,7 +108,7 @@ class Play:
                                     "きあら",
                                     ["zzzzz..."])
                             
-                        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+                        if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
                             self.message.messanger = "まいか"
                             self.message.complete = False
                             self.message.cnt += 1
@@ -124,7 +124,7 @@ class Play:
                                     "まいか",
                                     ["そうだ、いちご！", "きあらちゃん、とちぎのいちごだよー！","いい香りだよー、起きてー！"])
                         
-                        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+                        if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
                             self.message.messanger = "きあら"
                             self.message.complete = False
                             self.message.cnt += 1
@@ -134,7 +134,7 @@ class Play:
                                     "きあら",
                                     ["zzzzz..."])
                             
-                        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+                        if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
                             self.message.messanger = "まいか"
                             self.message.complete = False
                             self.message.cnt += 1
@@ -150,7 +150,7 @@ class Play:
                                     "まいか",
                                     ["よし、いちごを鼻に置くよ、いい香り", "そんで、メガホン！", "あーあー", "きあらちゃん、起きてー！"])
                         
-                        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+                        if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
                             self.message.messanger = "きあら"
                             self.message.complete = False
                             self.message.cnt += 1
@@ -161,7 +161,7 @@ class Play:
                                     "きあら",
                                     ["zzzzz...ん、まぶしい", "え、舞香ちゃんの声...？","あ？いちごの香り？","あ！舞香ちゃん！！"])
                         
-                        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+                        if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
                             self.message.messanger = "まいか"
                             self.message.complete = False
                             self.message.cnt += 1
@@ -171,7 +171,7 @@ class Play:
                                     "まいか",
                                     ["きあらやっとおきた！", "いそいできがえて！", "みんなまってるよ！"])
                         
-                        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+                        if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
                             self.message.messanger = "きあら"
                             self.message.complete = False
                             self.message.cnt += 1
@@ -181,12 +181,12 @@ class Play:
                                     "きあら",
                                     ["はいっ！"])
                         
-                        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+                        if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
                             self.クリア = True
 
                         #えんでぃんぐへ
 
-                if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
+                if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
                     #戻る
                     self.舞香ちゃん.global_x = const.階段脇_ステージ裏[const.階段_X座標Idx]
                     self.舞香ちゃん.global_y = const.階段脇_ステージ裏[const.階段_Y座標Idx]
@@ -215,7 +215,7 @@ class Play:
             
             for member in self.members:
                 if member.部屋の場所() == self.舞香ちゃん.部屋の場所():
-                    if member.名前 == "さっしー" and member.舞香ちゃん情報[const.舞香ちゃん情報キー.会話済メンバー数] == 8:
+                    if member.名前 == "さっしー" and member.舞香ちゃん情報[const.舞香ちゃん情報キー.会話済メンバー数] >= 0:
                         member.global_x = 528
                         member.global_y = 496
                         member.local_x = member.global_x % const.FIELD
@@ -257,7 +257,7 @@ class Play:
                     const.キャラ['とくべちゅきあら']['左'][const.向き.南][1],
                     const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
 
-            mes4 = self.timer.経過時間 + "秒"
+            mes4 = str(self.timer.経過時間) + "秒"
             pyxel.text(self.X軸センタリング(mes4, const.TITLE_FONT_SIZE), 145, mes4, const.色.BLACK.value, self.rpg.t_font)
 
             if pyxel.btn(pyxel.KEY_RETURN):
