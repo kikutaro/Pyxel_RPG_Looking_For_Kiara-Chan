@@ -111,6 +111,8 @@ class Quiz:
             ("ゲームを終了する", lambda: self.ゲームを終了する())
         ])
 
+        self.m_font = pyxel.Font('assets/misaki_gothic_2nd.bdf')
+
     def タイトルに戻る(self):
         self.rpg.change_story(const.STORY.TITLE)
 
@@ -159,14 +161,14 @@ class Quiz:
             case "問題":
                 pyxel.cls(const.色.PINK.value)
                 pyxel.rect(const.Q_POS_X, const.Q_POS_Y, const.Q_WIDTH, const.Q_HEIGHT, const.色.WHITE.value)
-                pyxel.text(const.Q_POS_X + const.Q_PADDING, const.Q_POS_Y + const.Q_PADDING, self.問題[self.問題番号]["問題"], const.色.BLACK.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+                pyxel.text(const.Q_POS_X + const.Q_PADDING, const.Q_POS_Y + const.Q_PADDING, self.問題[self.問題番号]["問題"], const.色.BLACK.value, self.m_font)
                 pyxel.rect(const.A_POS_X, const.A_POS_Y, const.A_WIDTH, const.A_HEIGHT, const.色.WHITE.value)
-                pyxel.text(const.Q_POS_X + const.A_WIDTH - len("正解数 0/0") * const.FONT_SIZE , const.Q_HEIGHT+const.A_HEIGHT, "正解数 " + str(self.正解数) +"/" + str(self.回答数), const.色.BLUE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+                pyxel.text(const.Q_POS_X + const.A_WIDTH - len("正解数 0/0") * const.FONT_SIZE , const.Q_HEIGHT+const.A_HEIGHT, "正解数 " + str(self.正解数) +"/" + str(self.回答数), const.色.BLUE.value, self.m_font)
                 for i, choice in enumerate(self.問題[self.問題番号]["選択肢"]):
-                    pyxel.text(const.A_POS_X + const.A_PADDING, const.A_POS_Y + const.A_PADDING + i * 10, f"{i + 1}. {choice}", const.色.RED.value if self.選択 == i else const.色.BLACK.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+                    pyxel.text(const.A_POS_X + const.A_PADDING, const.A_POS_Y + const.A_PADDING + i * 10, f"{i + 1}. {choice}", const.色.RED.value if self.選択 == i else const.色.BLACK.value, self.m_font)
             case "終了":
                 pyxel.cls(const.色.BLACK.value)
-                pyxel.text(const.Q_POS_X , const.Q_HEIGHT, "正解数 " + str(self.正解数) +"/" + str(self.回答数), const.色.WHITE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+                pyxel.text(const.Q_POS_X , const.Q_HEIGHT, "正解数 " + str(self.正解数) +"/" + str(self.回答数), const.色.WHITE.value, self.m_font)
                 match self.正解数:
                     case 0:
                         評価 = "残念！"
@@ -176,7 +178,7 @@ class Quiz:
                         評価 = "すごい！"
                     case _:
                         評価 = "キミはイコラブクイズ王だね！"
-                pyxel.text(const.Q_POS_X , const.Q_HEIGHT + const.FONT_SIZE, 評価, const.色.WHITE.value, pyxel.Font('assets/misaki_gothic_2nd.bdf'))
+                pyxel.text(const.Q_POS_X , const.Q_HEIGHT + const.FONT_SIZE, 評価, const.色.WHITE.value, self.m_font)
                 self.メニュー.draw()
 
     def アタリ(self):
