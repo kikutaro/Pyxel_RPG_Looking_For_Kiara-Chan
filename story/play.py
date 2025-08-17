@@ -23,7 +23,7 @@ class Play:
             Character(const.TILE*21,const.TILE*23,"みりにゃ"),
             Character(const.TILE*40,const.TILE*10,"しょこ"),
             Character(const.TILE*51,const.TILE*6,"あんな"),
-            Character(const.TILE*40,const.TILE*34,"さなつん"),
+            Character(const.TILE*38,const.TILE*41,"さなつん"),
             Character(const.TILE*22,const.TILE*38,"ひとみ"),
             Character(const.TILE*9,const.TILE*58,"いおり"),
             Character(const.TILE*61,const.TILE*57,"りさ"),
