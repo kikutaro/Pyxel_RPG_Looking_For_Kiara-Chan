@@ -62,6 +62,7 @@ class Play:
                 self.message.complete = False
                 self.message.messages.clear()
                 self.くろしまトーク = True
+                self.message.messanger = "まいか"
 
         if self.舞香ちゃん.部屋の場所() == const.最後の部屋:
             if self.message.messanger == "まいか" and len(self.舞香ちゃん.持ってるアイテム()) == 0 or const.アイテム.さいりうむ.value not in self.舞香ちゃん.持ってるアイテム():
