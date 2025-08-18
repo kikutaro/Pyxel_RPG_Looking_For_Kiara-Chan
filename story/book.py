@@ -84,8 +84,9 @@ class Book:
                 'しんちょう': '158cm',
                 'せいねんがっぴ': '1996-8-3',
                 'しゅっしんち': 'ふくしまけん',
-                'しゅみ': ['ふらだんす', 'タヒチアンダンス'],
-                'とくぎ': ['すいえいえいりょくけんてい2級'],
+                'しゅみ': ['えいがかんしょう'],
+                'とくぎ': ['ふらだんす', 'タヒチアンダンス'],
+                'しかく': 'すいえいえいりょくけんてい2級'
             }],
             'やまもとあんな': [self.やまもとあんな,{
                 'けつえきがた': 'A',
@@ -225,42 +226,42 @@ class Book:
                     pyxel.blt(100,22,0,
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['右'][const.向き.南][0],
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['右'][const.向き.南][1],
-                        const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
+                        const.キャラサイズ,const.キャラサイズ,const.色.GRAY.value)
                 else:
                     pyxel.blt(100,22,0,
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['左'][const.向き.南][0],
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['左'][const.向き.南][1],
-                        const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
+                        const.キャラサイズ,const.キャラサイズ,const.色.GRAY.value)
                 if 0 < pyxel.frame_count % 10 and  pyxel.frame_count % 10 < 5:
                     pyxel.blt(116,22,0,
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['右'][const.向き.東][0],
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['右'][const.向き.東][1],
-                        const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
+                        const.キャラサイズ,const.キャラサイズ,const.色.GRAY.value)
                 else:
                     pyxel.blt(116,22,0,
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['左'][const.向き.東][0],
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['左'][const.向き.東][1],
-                        const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
+                        const.キャラサイズ,const.キャラサイズ,const.色.GRAY.value)
                 if 0 < pyxel.frame_count % 10 and  pyxel.frame_count % 10 < 5:
                     pyxel.blt(132,22,0,
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['右'][const.向き.西][0],
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['右'][const.向き.西][1],
-                        const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
+                        const.キャラサイズ,const.キャラサイズ,const.色.GRAY.value)
                 else:
                     pyxel.blt(132,22,0,
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['左'][const.向き.西][0],
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['左'][const.向き.西][1],
-                        const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
+                        const.キャラサイズ,const.キャラサイズ,const.色.GRAY.value)
                 if 0 < pyxel.frame_count % 10 and  pyxel.frame_count % 10 < 5:
                     pyxel.blt(148,22,0,
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['右'][const.向き.北][0],
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['右'][const.向き.北][1],
-                        const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
+                        const.キャラサイズ,const.キャラサイズ,const.色.GRAY.value)
                 else:
                     pyxel.blt(148,22,0,
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['左'][const.向き.北][0],
                         const.キャラ[self.キャラ名コンバート(self.選択したメンバー)]['左'][const.向き.北][1],
-                        const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
+                        const.キャラサイズ,const.キャラサイズ,const.色.GRAY.value)
 
                 pyxel.text(190, 25, "<<", const.色.RED.value if self.メニューIdx == 0 else const.色.WHITE.value, self.rpg.m_font)
                 pyxel.text(205, 25, "戻る", const.色.RED.value if self.メニューIdx == 1 else const.色.WHITE.value, self.rpg.m_font)
