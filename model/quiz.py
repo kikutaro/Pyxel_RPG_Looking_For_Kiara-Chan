@@ -107,17 +107,13 @@ class Quiz:
         self.問題番号 = random.randint(0, len(self.問題) - 1)
         self.メニュー = Menu(None, const.色.WHITE.value, const.色.RED.value, [
             ("もういちど挑戦する", lambda: self.__init__(rpg)),
-            ("タイトルに戻る", lambda: self.タイトルに戻る()),
-            ("ゲームを終了する", lambda: self.ゲームを終了する())
+            ("タイトルに戻る", lambda: self.タイトルに戻る())
         ])
 
         self.m_font = pyxel.Font('assets/misaki_gothic_2nd.bdf')
 
     def タイトルに戻る(self):
         self.rpg.change_story(const.STORY.TITLE)
-
-    def ゲームを終了する(self):
-        pyxel.quit()
 
     def 回答する(self):
         match self.状態:
