@@ -5,6 +5,7 @@ from model.character import Character
 from model.message import Message
 from model.timer import Timer
 from model.item import Item
+import random
 
 class Play:
     def __init__(self, rpg):
@@ -41,6 +42,24 @@ class Play:
 
         self.情報表示 = True
 
+        self.くろしまランダムセリフ = [
+            ["Here we are!うちらの...","LEADER!"],
+            ["なんでもチャレンジ...","ACTIVE Girl!"],
+            ["かわいい 魅惑の...","MERMAID!"],
+            ["甘美なAngel","デビルの誘惑!"],
+            ["Princess...","の国から飛んできたとよ!"],
+            ["ハイトーン飾る あふれる...","Smile!"],
+            ["君の好きな声でいたいな...","DIVA！"],
+            ["みりにゃ 女子の憧れ...","Sweetie Girl!"],
+            ["みんなを照らすよ！","SUNNY！"],
+            ["努力型 天才...","Performer!"]
+        ]
+
+        self.くろしま今回のセリフ = random.choice(self.くろしまランダムセリフ)
+
+        self.くろしまセリフ = ["さなちゃんとはなしたようだね","さなきあにはおせわになってるから魔法をかけてあげよう" ,"さあ、あるいてみて！"]
+        self.くろしまセリフ[2:2] = self.くろしま今回のセリフ
+
     def start(self):
         pyxel.stop()
         self.舞香ちゃん.getMusic().BGMランダム再生()
@@ -54,8 +73,7 @@ class Play:
 
         if ("さなつん" in self.舞香ちゃん.会話済メンバー and self.舞香ちゃん.global_x // const.CELL, self.舞香ちゃん.global_y // const.CELL) in const.くろしままえ and not self.くろしまトーク and self.舞香ちゃん.向き == const.向き.北:
             self.message.話す(const.M_TYPE.WINDOW, 
-                            "くろしまくん", 
-                            ["さなちゃんとはなしたようだね","さなきあにはおせわになってるから魔法をかけてあげよう", "き・り・が・み・ね", "さあ、あるいてみて！"])
+                            "くろしまくん", self.くろしまセリフ)
             const.キャラ歩幅 = 8
 
             if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
