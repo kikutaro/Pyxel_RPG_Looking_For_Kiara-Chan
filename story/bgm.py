@@ -24,4 +24,5 @@ class Bgm:
         self.menu.draw()
 
     def メニューに戻る(self):
+        pyxel.stop()
         self.rpg.change_story(const.STORY.TITLE)
