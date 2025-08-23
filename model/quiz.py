@@ -113,6 +113,7 @@ class Quiz:
         self.m_font = pyxel.Font('assets/misaki_gothic_2nd.bdf')
 
     def タイトルに戻る(self):
+        pyxel.stop()
         self.rpg.change_story(const.STORY.TITLE)
 
     def 回答する(self):

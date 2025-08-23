@@ -38,9 +38,13 @@ class Title:
             ("くいず", lambda: self.rpg.change_story(const.STORY.QUIZ)),
             ("みゅーじっくぼっくす", lambda: self.rpg.change_story(const.STORY.BGM))
             ])
+        
+        self.音楽再生回数 = 0
     
     def start(self):
-        pyxel.playm(0)
+        if self.音楽再生回数 == 0:
+            self.音楽再生回数 += 1
+            pyxel.playm(0)
 
     def update(self):
         if self.mode == const.OPENING_MODE.OPENING:
