@@ -104,13 +104,13 @@ class Character():
             case "しょこ":
                 self.message.話す(const.M_TYPE.WINDOW, self.名前,["きあら、サイリウム買いに行くって言ってたんだよね"])
             case "あんな":
-                self.message.話す(const.M_TYPE.WINDOW, self.名前,["きあら、拡声器の調整するって外に出たんだよ", "止めれば良かったな..."])
+                self.message.話す(const.M_TYPE.WINDOW, self.名前,["きあら、メガホンの調整するって外に出たんだよ", "止めれば良かったな..."])
             case "さなつん":
                 self.message.話す(const.M_TYPE.WINDOW, self.名前,["あ！まいか！", "祝花みた！？","くろしまくんいたんだよ！！"])
             case "ひとみ":
                 self.message.話す(const.M_TYPE.WINDOW, self.名前,["ねえねえ、まいか！", "ここの会場ってさ", "ステージのうらに隠し部屋があるらしいよ","いってみない？"])
             case "いおり":
-                self.message.話す(const.M_TYPE.WINDOW, self.名前,["前にきあら", "起きるには５感の刺激が大事", "っていってたな..."])
+                self.message.話す(const.M_TYPE.WINDOW, self.名前,["前にきあら", "起きるためには、ひかり・おと・かおり、の３つが大事", "っていってたな..."])
             case "りさ":
                 self.message.話す(const.M_TYPE.WINDOW, self.名前,["ようすがおかしい！","ようすがおかしい！"])
             case "さっしー":
@@ -125,7 +125,7 @@ class Character():
             case "しのぶさん":
                 self.message.話す(const.M_TYPE.WINDOW, self.名前,["ねえ、きあらちゃん衣装まちがえてない？", "こまったわねぇ..."])
             case "はせがわさん":
-                self.message.話す(const.M_TYPE.WINDOW, self.名前,["おれ本当はきあらちゃんのことが..."])
+                self.message.話す(const.M_TYPE.WINDOW, self.名前,["さしはらによばれてライブみにきたよ", "すげーたのしみ！"])
             case "じろうさん":
                 self.message.話す(const.M_TYPE.WINDOW, self.名前,["らっしゃいらっしゃい", "たから釣ってってよ！"])
                 
