@@ -76,6 +76,8 @@ class Play:
         self.クリアメッセージ3配置 = self.X軸センタリング(self.クリアメッセージ3, const.FONT_SIZE)
         self.ボーナスメッセージ配置 = self.X軸センタリング(self.ボーナスメッセージ, const.FONT_SIZE)
 
+        self.きあら = Character(const.TILE * 40, const.FIELD + const.TILE * 6,"きあら")
+
     def start(self):
         pyxel.stop()
         self.舞香ちゃん.getMusic().BGMランダム再生()
@@ -266,8 +268,7 @@ class Play:
             self.message.表示()
 
             if(self.きあらちゃんおっき):
-                きあら = Character(const.TILE * 40, const.FIELD + const.TILE * 6,"きあら")
-                きあら.draw()
+                self.きあら.draw()
                 pyxel.tilemaps[0].pset(const.寝てるきあら[0][0], const.寝てるきあら[0][1], const.タイル_きあらが寝てる床[0])
                 pyxel.tilemaps[0].pset(const.寝てるきあら[1][0], const.寝てるきあら[1][1], const.タイル_きあらが寝てる床[1])
                 pyxel.tilemaps[0].pset(const.寝てるきあら[2][0], const.寝てるきあら[2][1], const.タイル_きあらが寝てる床[2])
