@@ -6,6 +6,7 @@ from model.message import Message
 from model.timer import Timer
 from model.item import Item
 import random
+from model.menu import Menu
 
 class Play:
     def __init__(self, rpg):
@@ -39,6 +40,12 @@ class Play:
         self.くろしまトーク = False
         self.きあらちゃんおっき = False
         self.クリア = False
+        self.エンディング = False
+
+        self.メニュー = Menu(None, const.色.BLACK.value, const.色.PINK.value, [
+            # ("すくしょまち", lambda: self.すくしょまち()),
+            ("えんでぃんぐをみる", lambda: self.えんでぃんぐをみる())
+        ])
 
         self.情報表示 = True
 
@@ -60,6 +67,15 @@ class Play:
         self.くろしまセリフ = ["さなちゃんとはなしたようだね","さなきあにはおせわになってるから魔法をかけてあげよう" ,"さあ、あるいてみて！"]
         self.くろしまセリフ[2:2] = self.くろしま今回のセリフ
 
+        self.クリアメッセージ1 = "さがしてくれて、ありがとう！"
+        self.クリアメッセージ2 = "このスクリーンをキャプチャしてタイムをきそってね！"
+        self.クリアメッセージ3 = "クリアタイム"
+        self.ボーナスメッセージ = "衣装ボーナスで-90秒"
+        self.クリアメッセージ1配置 = self.X軸センタリング(self.クリアメッセージ1, const.FONT_SIZE)
+        self.クリアメッセージ2配置 = self.X軸センタリング(self.クリアメッセージ2, const.FONT_SIZE)
+        self.クリアメッセージ3配置 = self.X軸センタリング(self.クリアメッセージ3, const.FONT_SIZE)
+        self.ボーナスメッセージ配置 = self.X軸センタリング(self.ボーナスメッセージ, const.FONT_SIZE)
+
     def start(self):
         pyxel.stop()
         self.舞香ちゃん.getMusic().BGMランダム再生()
@@ -68,7 +84,7 @@ class Play:
         self.timer.カウントスタート()
 
     def update(self):
-        if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_X) or pyxel.btnp(pyxel.KEY_A):
+        if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_X):
             self.情報表示 = not self.情報表示
 
         if ("さなつん" in self.舞香ちゃん.会話済メンバー and self.舞香ちゃん.global_x // const.CELL, self.舞香ちゃん.global_y // const.CELL) in const.くろしままえ and not self.くろしまトーク and self.舞香ちゃん.向き == const.向き.北:
@@ -201,22 +217,25 @@ class Play:
                                     ["はいっ！"])
                         
                         if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
+                            self.message.cnt += 1
                             self.クリア = True
 
-                        #えんでぃんぐへ
-
-                if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
+                if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btnp(pyxel.KEY_RETURN)):
                     #戻る
                     self.舞香ちゃん.global_x = const.階段脇_ステージ裏[const.階段_X座標Idx]
                     self.舞香ちゃん.global_y = const.階段脇_ステージ裏[const.階段_Y座標Idx]
-                    self.message.cnt = 0
+                    self.message.cnt = 1
                     self.message.messages.clear()
+                    self.message.complete = False
         else:
             self.舞香ちゃん.update(self.members)
             for member in self.members:
                 if member.名前 == "さっしー":
                     member.舞香ちゃんの情報を得る(const.舞香ちゃん情報キー.会話済メンバー数, len(self.舞香ちゃん.会話済メンバー))
                 member.update()
+
+        if self.クリア and self.エンディング:
+            self.メニュー.update()
 
     def draw(self):
         if not self.クリア:
@@ -259,29 +278,33 @@ class Play:
             mes1 = "さがしてくれて、ありがとう！"
             mes2 = "このスクリーンをキャプチャしてタイムをきそってね！"
             mes3 = "クリアタイム"
-            pyxel.text(self.X軸センタリング(mes1, const.FONT_SIZE), 60, mes1, const.色.BLACK.value, self.rpg.m_font)
-            pyxel.text(self.X軸センタリング(mes2, const.FONT_SIZE), 80, mes2, const.色.BLACK.value, self.rpg.m_font)
-            pyxel.text(self.X軸センタリング(mes3, const.FONT_SIZE), 100, mes3 , const.色.BLACK.value, self.rpg.m_font)
+            pyxel.text(self.クリアメッセージ1配置, 60, self.クリアメッセージ1, const.色.BLACK.value, self.rpg.m_font)
+            pyxel.text(self.クリアメッセージ2配置, 80, self.クリアメッセージ2, const.色.BLACK.value, self.rpg.m_font)
+            pyxel.text(self.クリアメッセージ3配置, 160, self.クリアメッセージ3 , const.色.BLACK.value, self.rpg.m_font)
 
             #右
             if 0 < pyxel.frame_count % 10 and  pyxel.frame_count % 10 < 5:
-                pyxel.blt((const.FIELD - const.キャラサイズ) / 2, (const.FIELD - const.キャラサイズ) / 2,0,
+                pyxel.blt((const.FIELD - const.キャラサイズ) / 2, 50 / 2,0,
                     const.キャラ['とくべちゅきあら']['右'][const.向き.南][0],
                     const.キャラ['とくべちゅきあら']['右'][const.向き.南][1],
-                    const.キャラサイズ,const.キャラサイズ, const.色.WHITE.value)
+                    const.キャラサイズ,const.キャラサイズ, const.色.GRAY.value)
             #左
             else:
-                pyxel.blt((const.FIELD - const.キャラサイズ) / 2, (const.FIELD - const.キャラサイズ) / 2,0,
+                pyxel.blt((const.FIELD - const.キャラサイズ) / 2, 50 / 2,0,
                     const.キャラ['とくべちゅきあら']['左'][const.向き.南][0],
                     const.キャラ['とくべちゅきあら']['左'][const.向き.南][1],
-                    const.キャラサイズ,const.キャラサイズ,const.色.WHITE.value)
+                    const.キャラサイズ,const.キャラサイズ,const.色.GRAY.value)
 
-            mes4 = str(self.timer.経過時間) + "秒"
-            pyxel.text(self.X軸センタリング(mes4, const.TITLE_FONT_SIZE), 145, mes4, const.色.BLACK.value, self.rpg.t_font)
+            クリア時間メッセージ = str(self.timer.経過時間 - 90) + "秒" if const.アイテム.衣装.value in self.舞香ちゃん.持ってるアイテム() else str(self.timer.経過時間) + "秒"
+            
+            # クリア時間メッセージ = str(100) + ("秒 - 衣装ボーナス90秒　＝ " + str(100-90) if False else "") +  "秒"
+            pyxel.text(self.X軸センタリング(クリア時間メッセージ, const.TITLE_FONT_SIZE), 175, クリア時間メッセージ, const.色.BLACK.value, self.rpg.t_font)
+            if const.アイテム.衣装.value in self.舞香ちゃん.持ってるアイテム():
+                pyxel.text(self.ボーナスメッセージ配置, 195, self.ボーナスメッセージ , const.色.RED.value, self.rpg.m_font)
 
-            if pyxel.btn(pyxel.KEY_RETURN):
-                pass
-        
+            self.エンディング = True
+            self.メニュー.draw()
+
     def X軸センタリング(self, text, font_size):
         return ((const.FIELD - len(text) * font_size)) / 2
 
@@ -290,3 +313,9 @@ class Play:
         描画マップx = (x座標 + const.キャラサイズ // 2) // const.FIELD * const.FIELD
         描画マップy = (y座標 + const.キャラサイズ // 2) // const.FIELD * const.FIELD
         pyxel.bltm(0,0,0, 描画マップx, 描画マップy, const.FIELD,const.FIELD)
+
+    def えんでぃんぐをみる(self):
+        self.rpg.change_story(const.STORY.ENDING)
+
+    def すくしょまち(self):
+        pass

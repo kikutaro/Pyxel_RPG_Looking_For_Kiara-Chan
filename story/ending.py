@@ -35,18 +35,18 @@ class Ending:
                             "これで、みんなそろったね！",
                             "じゃあ、きょうのライブがんばろうね！！"])
 
-        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
-            self.messanger = "ナレーター"
-            self.message.complete = False
+            if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
+                self.messanger = "ナレーター"
+                self.message.complete = False
 
-        if self.messanger == "ナレーター":
+        if not self.message.complete and self.messanger == "ナレーター":
             self.message.話す(const.M_TYPE.STORY,None,
-                 ["10人がそろったイコラブはさいきょう...",
-                  "そして、ライブは大成功に終わった"]
+                ["10人がそろったイコラブはさいきょう...",
+                "そして、ライブは大成功に終わった"]
                 )
             
-        if self.message.complete and pyxel.btn(pyxel.KEY_RETURN):
-            self.rpg.change_story(const.STORY.GAMECLEAR)
+            if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
+                self.rpg.change_story(const.STORY.GAMECLEAR)
 
     def draw(self):
         pyxel.bltm(

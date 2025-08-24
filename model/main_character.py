@@ -127,8 +127,8 @@ class MainCharacter(Character):
             self.global_y = const.階段脇_ケータリング[const.階段_Y座標Idx]
         elif pyxel.tilemaps[0].pget(x //const.CELL ,y //const.CELL) in const.階段_ステージ裏:
             pyxel.play(const.BGMチャンネル, [const.階段音])
-            self.global_x = 46*const.CELL#const.階段脇_隠し部屋[const.階段_X座標Idx] 
-            self.global_y = 140*const.CELL#const.階段脇_隠し部屋[const.階段_Y座標Idx]
+            self.global_x = const.階段脇_隠し部屋[const.階段_X座標Idx] 
+            self.global_y = const.階段脇_隠し部屋[const.階段_Y座標Idx]
         elif pyxel.tilemaps[0].pget(x //const.CELL ,y //const.CELL) in const.階段_隠し部屋:
             pyxel.play(const.BGMチャンネル, [const.階段音])
             self.global_x = const.階段脇_ステージ裏[const.階段_X座標Idx]
@@ -154,6 +154,13 @@ class MainCharacter(Character):
             pyxel.tilemaps[0].pset(const.アイテム_サイリウム_配置[2][0],const.アイテム_サイリウム_配置[2][1],const.タイル_サイリウムとったあと[2])
             pyxel.tilemaps[0].pset(const.アイテム_サイリウム_配置[3][0],const.アイテム_サイリウム_配置[3][1],const.タイル_サイリウムとったあと[3])
             self.item.アイテムを追加(const.アイテム.さいりうむ.value)
+        elif pyxel.tilemaps[0].pget(x //const.CELL ,y //const.CELL) in const.アイテム_衣装_識別:
+            pyxel.play(const.BGMチャンネル, [const.アイテム取得])
+            pyxel.tilemaps[0].pset(const.アイテム_衣装_配置[0][0],const.アイテム_衣装_配置[0][1],const.タイル_衣装とったあと[0])
+            pyxel.tilemaps[0].pset(const.アイテム_衣装_配置[1][0],const.アイテム_衣装_配置[1][1],const.タイル_衣装とったあと[1])
+            pyxel.tilemaps[0].pset(const.アイテム_衣装_配置[2][0],const.アイテム_衣装_配置[2][1],const.タイル_衣装とったあと[2])
+            pyxel.tilemaps[0].pset(const.アイテム_衣装_配置[3][0],const.アイテム_衣装_配置[3][1],const.タイル_衣装とったあと[3])
+            self.item.アイテムを追加(const.アイテム.衣装.value)
 
         self.local_x = self.global_x % const.FIELD
         self.local_y = self.global_y % const.FIELD
