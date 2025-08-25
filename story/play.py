@@ -77,6 +77,8 @@ class Play:
         self.ボーナスメッセージ配置 = self.X軸センタリング(self.ボーナスメッセージ, const.FONT_SIZE)
 
         self.きあら = Character(const.TILE * 40, const.FIELD + const.TILE * 6,"きあら")
+        self.くろしまくん = Character(const.TILE * 7, const.FIELD * 2 + const.TILE * 6,"くろしまくん")
+        self.くろしまくん.向き = const.向き.南
 
     def start(self):
         pyxel.stop()
@@ -92,13 +94,13 @@ class Play:
         if ("さなつん" in self.舞香ちゃん.会話済メンバー and self.舞香ちゃん.global_x // const.CELL, self.舞香ちゃん.global_y // const.CELL) in const.くろしままえ and not self.くろしまトーク and self.舞香ちゃん.向き == const.向き.北:
             self.message.話す(const.M_TYPE.WINDOW, 
                             "くろしまくん", self.くろしまセリフ)
-            const.キャラ歩幅 = 8
-
-            if self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
+            
+            if self.message.messanger == "くろしまくん" and self.message.complete and (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btn(pyxel.KEY_RETURN)):
                 self.message.complete = False
                 self.message.messages.clear()
                 self.くろしまトーク = True
                 self.message.messanger = "まいか"
+                const.キャラ歩幅 = 8
 
         if self.舞香ちゃん.部屋の場所() == const.最後の部屋:
             if self.message.messanger == "まいか" and len(self.舞香ちゃん.持ってるアイテム()) == 0 or const.アイテム.さいりうむ.value not in self.舞香ちゃん.持ってるアイテム():

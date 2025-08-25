@@ -81,3 +81,13 @@ class Message:
         start_x = (const.L_WIDTH - max_message_len * const.FONT_SIZE) / 2 - 1
         start_y = (const.L_HEIGHT - len(messages) * const.FONT_SIZE) / 2- 1
         return start_x, start_y
+    
+    def デバッグ(self):
+        if(self.messanger == "くろしまくん"):
+            print("counter:" + str(self.counter))
+            print("message_line:" + str(self.message_line))
+            print("message_idx:" + str(self.message_idx))
+            print("messages:" + str(self.messages))
+            print("complete:" + str(self.complete))
+            print("cnt:" + str(self.cnt))
+            print(pyxel.frame_count)
