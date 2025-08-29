@@ -257,7 +257,7 @@ class Play:
             
             for member in self.members:
                 if member.部屋の場所() == self.舞香ちゃん.部屋の場所():
-                    if member.名前 == "さっしー" and member.舞香ちゃん情報[const.舞香ちゃん情報キー.会話済メンバー数] >= 0:
+                    if member.名前 == "さっしー" and member.舞香ちゃん情報[const.舞香ちゃん情報キー.会話済メンバー数] == 8:
                         member.global_x = 528
                         member.global_y = 496
                         member.local_x = member.global_x % const.FIELD
