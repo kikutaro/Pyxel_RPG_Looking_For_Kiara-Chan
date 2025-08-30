@@ -37,6 +37,7 @@ class Title:
             ("めんばーずかん", lambda: self.rpg.change_story(const.STORY.BOOK)),
             ("くいず", lambda: self.rpg.change_story(const.STORY.QUIZ)),
             ("みゅーじっくぼっくす", lambda: self.rpg.change_story(const.STORY.BGM))
+            # ("おわり", lambda: self.rpg.change_story(const.STORY.GAMECLEAR))
             ])
         
         self.音楽再生回数 = 0
