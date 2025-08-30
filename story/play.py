@@ -43,7 +43,7 @@ class Play:
         self.エンディング = False
 
         self.メニュー = Menu(None, const.色.BLACK.value, const.色.PINK.value, [
-            # ("すくしょまち", lambda: self.すくしょまち()),
+            ("スクショまち", lambda: self.すくしょまち()),
             ("えんでぃんぐをみる", lambda: self.えんでぃんぐをみる())
         ])
 
