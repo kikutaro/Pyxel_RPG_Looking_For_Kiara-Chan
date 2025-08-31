@@ -153,6 +153,10 @@ class MainCharacter(Character):
             pyxel.tilemaps[0].pset(const.アイテム_サイリウム_配置[1][0],const.アイテム_サイリウム_配置[1][1],const.タイル_サイリウムとったあと[1])
             pyxel.tilemaps[0].pset(const.アイテム_サイリウム_配置[2][0],const.アイテム_サイリウム_配置[2][1],const.タイル_サイリウムとったあと[2])
             pyxel.tilemaps[0].pset(const.アイテム_サイリウム_配置[3][0],const.アイテム_サイリウム_配置[3][1],const.タイル_サイリウムとったあと[3])
+            pyxel.tilemaps[0].pset(const.物販列ストッパー[0][0],const.物販列ストッパー[0][1],const.物販列ストッパー解除[0])
+            pyxel.tilemaps[0].pset(const.物販列ストッパー[1][0],const.物販列ストッパー[1][1],const.物販列ストッパー解除[1])
+            pyxel.tilemaps[0].pset(const.物販列ストッパー[2][0],const.物販列ストッパー[2][1],const.物販列ストッパー解除[2])
+            pyxel.tilemaps[0].pset(const.物販列ストッパー[3][0],const.物販列ストッパー[3][1],const.物販列ストッパー解除[3])
             self.item.アイテムを追加(const.アイテム.さいりうむ.value)
         elif pyxel.tilemaps[0].pget(x //const.CELL ,y //const.CELL) in const.アイテム_衣装_識別:
             pyxel.play(const.BGMチャンネル, [const.アイテム取得])

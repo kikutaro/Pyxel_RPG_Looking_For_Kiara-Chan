@@ -12,9 +12,9 @@ class Gameclear:
     def update(self):
         if self.h > 70:
             self.h -= 1
-
-        if (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btnp(pyxel.KEY_RETURN)):
-            pyxel.reset()
+        else:
+            if (pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B) or pyxel.btnp(pyxel.KEY_RETURN)):
+                pyxel.reset()
 
     def draw(self):
         pyxel.cls(const.色.WHITE.value)
