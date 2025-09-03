@@ -41,6 +41,7 @@ class Title:
             ])
         
         self.音楽再生回数 = 0
+        const.キャラ歩幅 = 4
     
     def start(self):
         if self.音楽再生回数 == 0:

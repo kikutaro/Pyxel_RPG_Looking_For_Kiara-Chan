@@ -234,7 +234,7 @@ class Play:
         else:
             self.舞香ちゃん.update(self.members)
             for member in self.members:
-                if member.名前 == "さっしー":
+                if member.名前 == "さっしー" or member.名前 == "りさ":
                     member.舞香ちゃんの情報を得る(const.舞香ちゃん情報キー.会話済メンバー数, len(self.舞香ちゃん.会話済メンバー))
                 member.update()
 

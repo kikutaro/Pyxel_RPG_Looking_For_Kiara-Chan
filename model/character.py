@@ -112,7 +112,10 @@ class Character():
             case "いおり":
                 self.message.話す(const.M_TYPE.WINDOW, self.名前,["前にきあら", "起きるためには、ひかり・おと・かおり、の３つが大事", "っていってたな..."])
             case "りさ":
-                self.message.話す(const.M_TYPE.WINDOW, self.名前,["ようすがおかしい！","ようすがおかしい！"])
+                if self.舞香ちゃん情報[const.舞香ちゃん情報キー.会話済メンバー数] >= 4:
+                    self.message.話す(const.M_TYPE.WINDOW, self.名前,["この世界ってゴミめいてるよね？","んふっ（笑）"])
+                else:
+                    self.message.話す(const.M_TYPE.WINDOW, self.名前,["ようすがおかしい！","ようすがおかしい！"])                    
             case "さっしー":
                 if self.舞香ちゃん情報[const.舞香ちゃん情報キー.会話済メンバー数] == 8:
                     self.message.話す(const.M_TYPE.WINDOW, self.名前,["さすがまいか","みんなから話を聞いたみたいだね！"])
