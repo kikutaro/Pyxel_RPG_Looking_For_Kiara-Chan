@@ -298,9 +298,7 @@ class Play:
                     const.キャラ['とくべちゅきあら']['左'][const.向き.南][1],
                     const.キャラサイズ,const.キャラサイズ,const.色.GRAY.value)
 
-            クリア時間メッセージ = str(self.timer.経過時間 - 90) + "秒" if const.アイテム.衣装.value in self.舞香ちゃん.持ってるアイテム() else str(self.timer.経過時間) + "秒"
-            
-            # クリア時間メッセージ = str(100) + ("秒 - 衣装ボーナス90秒　＝ " + str(100-90) if False else "") +  "秒"
+            クリア時間メッセージ = str(self.timer.経過時間 - const.クリアボーナス) + "秒" if const.アイテム.衣装.value in self.舞香ちゃん.持ってるアイテム() else str(self.timer.経過時間) + "秒"
             pyxel.text(self.X軸センタリング(クリア時間メッセージ, const.TITLE_FONT_SIZE), 175, クリア時間メッセージ, const.色.BLACK.value, self.rpg.t_font)
             if const.アイテム.衣装.value in self.舞香ちゃん.持ってるアイテム():
                 pyxel.text(self.ボーナスメッセージ配置, 195, self.ボーナスメッセージ , const.色.RED.value, self.rpg.m_font)
